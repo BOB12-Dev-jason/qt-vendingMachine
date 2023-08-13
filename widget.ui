@@ -85,7 +85,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>exchange</string>
+    <string>Reset</string>
    </property>
   </widget>
   <widget class="QPushButton" name="buyCoffee">
