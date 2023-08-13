@@ -71,9 +71,24 @@ void Widget::on_buyMilk_clicked()
 void Widget::on_getExchange_clicked()
 {
     QMessageBox mb;
-    mb.information(nullptr, "rest", ("exchange: " + std::to_string(money)).c_str());
+    std::string c500 = std::to_string(money / 500);
+    money %=500;
+
+    std::string c100 = std::to_string(money/100);
+    money %= 100;
+
+    std::string c50 = std::to_string(money/50);
+    money %= 50;
+
+    std::string c10 = std::to_string(money/10);
+
+    std::string res = "exchange:\ncoin500: " + c500 +", coin100: "
+                      + c100 +", coin50: " + c50 + ", coin10: " + c10;
+
+    mb.information(nullptr, "exchange", res.c_str());
     money = 0;
     ui->lcdNumber->display(money);
+
 }
 
 
